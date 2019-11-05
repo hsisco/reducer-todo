@@ -8,12 +8,12 @@ export const reducer = (state, action) => {
   }
 }
 
-export const stateObj = [
+export const initialState = [
   {
     item: 'Learn about reducers',
     completed: false,
-    id: 3892987589
-  }
+    id: Date.now(),
+}
 ]
 // addItems = hex => {
 //   const newItem = {
