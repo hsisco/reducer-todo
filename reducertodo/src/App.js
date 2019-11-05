@@ -1,5 +1,5 @@
 import React, { useState, useReducer } from 'react';
-import { initialState, reducer } from './reducers/reducer';
+import { initialState, appReducer } from './reducers/reducer';
 import './App.css';
 
 
@@ -11,9 +11,12 @@ class App extends React.Component {
     };
   };
 
-  ToDo = () => {
-    const [state, dispatch] = useReducer(reducer, initialState);
-  }
+  const [state, dispatch] = useReducer(appReducer, initialState);
+  const [input, setInput] = useState('');
+
+  handleChanges = e => {
+    dispatch({type: "ADD_TODO", payload: e.target.value})
+  };
   
   render(){
     console.log(state, dispatch);

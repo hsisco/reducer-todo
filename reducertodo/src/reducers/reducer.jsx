@@ -1,8 +1,11 @@
 import React from 'react';
 
-export const reducer = (state, action) => {
+export const appReducer = (state, action) => {
   switch(action.type) {
-
+    case "ADD_TODO":
+      return {...state, item: action.payload};
+    case "DELETE_TODO":
+        return {...state, item: action.payload};  
     default:
       return state;
   }
