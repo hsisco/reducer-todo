@@ -1,34 +1,21 @@
-import React, { useState, useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import { initialState, appReducer } from './reducers/reducer';
 import './App.css';
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
 
-class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      initialState: []
-    };
-  };
-
+function App(){
   const [state, dispatch] = useReducer(appReducer, initialState);
   const [input, setInput] = useState('');
-
-  handleChanges = e => {
-    dispatch({type: "ADD_TODO", payload: e.target.value})
-  };
   
-  render(){
-    console.log(state, dispatch);
-
-    return(
-      <div className="App">
-        <ul className='list'>
-          <li>{this.state.item}</li>
-        </ul>
-      </div>
-    )
-  }
+  console.log(state, dispatch);
+  return(
+    <div className="App">
+      <TodoForm />
+      <TodoList />
+    </div>
+  )
 }
   
-  export default App;  
+export default App;  
