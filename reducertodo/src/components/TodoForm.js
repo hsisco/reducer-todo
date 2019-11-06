@@ -1,33 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const TodoForm = props => {
-  
+    const [input, setInput] = useState('');
+
   const handleSubmit = e => {
     e.preventDefault();
     props.dispatch({
       type: "ADD",
-      payload: props.input
+      payload: input
     })
-    props.setInput('');
+    setInput('');
   }
 
   const handleChanges = e => {
-    dispatch({type: "ADD", payload: e.target.value})
+    props.dispatch({type: "ADD", payload: e.target.value})
   };
 
   return(
     <div className="todo-form">
-      <form onSubmit={this.props.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="todo">Add something to your list</label>
         <input
           type="text"
           name="todo"
           id="todo"
-          value={this.props.newItem}
-          onChange={this.props.handleChanges}
+          value={input}
+          onChange={handleChanges}
           />
           <button type="submit">Add</button>
-          <button type="button" className="clear-btn" onClick={this.props.clearCast}>
+          <button type="button" className="clear-btn" onClick={handleSubmit}>
             Clear Hexes Cast
           </button>
       </form>
