@@ -2,9 +2,9 @@ import React from 'react';
 
 export const appReducer = (state, action) => {
   switch(action.type) {
-    case "ADD_TODO":
+    case "ADD":
       return {...state, item: action.payload};
-    case "DELETE_TODO":
+    case "COMPLETED":
         return {...state, item: action.payload};  
     default:
       return state;
