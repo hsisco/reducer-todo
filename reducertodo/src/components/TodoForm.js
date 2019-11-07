@@ -22,15 +22,16 @@ const TodoForm = props => {
         <label htmlFor="todo">Add something to your list</label>
         <input
           type="text"
-          name="todo"
-          id="todo"
+          name="input"
           value={input}
           onChange={handleChanges}
           />
-          <button type="submit">Add</button>
-          <button type="button" className="clear-btn" onClick={handleSubmit}>
-            Clear Hexes Cast
-          </button>
+          <button onClick={()=>{
+            props.dispatch({type: "ADD", payload: input})
+            setInput('')}}>
+            Add</button>
+          <button onClick={()=>props.dispatch({type: "COMPLETED"})}>
+            Clear Completed</button>
       </form>
     </div>
   );
