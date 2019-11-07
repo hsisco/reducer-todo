@@ -1,18 +1,20 @@
 import React from 'react';
 import Todo from './Todo';
 
-const TodoList = props => {
+const ToDoList = ({ state, dispatch }) => {
   return (
-    <div className="todo-list">
-      {props.state.item.map(todo => (
-        <Todo
-          key={todo.id}
-          {...todo}
-          toggleCast={props.toggleCast}
-          />
-      ))}
-    </div>
+    <>
+      <h2>Stuff I Gotta Do</h2>
+      <div className='card-container'>
+        {state.list.map(item => (
+          <Todo 
+          key={item.id}
+          {...item}
+          dispatch={dispatch} />
+        ))}
+      </div>
+    </>
   );
 };
 
-export default TodoList;
+export default ToDoList;
