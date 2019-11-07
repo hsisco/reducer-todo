@@ -1,4 +1,3 @@
-import React from 'react';
 
 export const appReducer = (state, action) => {
   switch(action.type) {
@@ -9,7 +8,7 @@ export const appReducer = (state, action) => {
         id: Date.now()
       }
       return {...state, 
-        item: [...state.item, newItem]};
+        list: [state.list, newItem]};
       
     case "TOGGLE":
         return {
