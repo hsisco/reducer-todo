@@ -1,11 +1,11 @@
 import React from 'react';
 import Todo from './Todo';
 
-const ToDoList = ({ state, dispatch }) => {
+const TodoList = ({ state, dispatch }) => {
   
   return (
 
   );
 };
 
-export default ToDoList;
+export default TodoList;
