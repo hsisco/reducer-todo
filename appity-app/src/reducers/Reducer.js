@@ -1,6 +1,6 @@
 export const appReducer = (state, action) => {
   switch(action.type) {
-    
+
     case "ADD":
       const newItem = {
         item: action.payload,
@@ -19,9 +19,19 @@ export const appReducer = (state, action) => {
           } else {
             return item;
           }
-        }
-      )
+        })
     };
+
+    case "COMPLETED":
+      return {
+        ...state,
+        item: state.list.filter(item => {
+          return item.completed === false;
+        })
+      };
+
+    default:
+      return state;
   }
 }
 
