@@ -8,7 +8,7 @@ export const appReducer = (state, action) => {
         id: Date.now()
       }
       return {...state, 
-        list: [state.list, newItem]};
+        list: [...state.list, newItem]};
 
     case "TOGGLE":
       return {
