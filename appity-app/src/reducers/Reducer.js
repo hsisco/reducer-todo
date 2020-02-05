@@ -39,6 +39,6 @@ export const initialState = { list: [
   {
     item: 'Learn about reducers',
     completed: false,
-    id: Date.now(),
+    id: Date.now()
   }
 ]}
