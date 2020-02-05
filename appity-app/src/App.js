@@ -6,7 +6,8 @@ import TodoList from './components/TodoList';
 
 function App(){
   const [state, dispatch] = useReducer(appReducer, initialState);
-  
+  console.log(state);
+
   return(
     <div className="App">
       <TodoForm state={state} dispatch={dispatch}/>
