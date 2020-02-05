@@ -13,7 +13,7 @@ const TodoForm = props => {
   }
 
   const handleChanges = e => {
-    props.dispatch({type: "ADD", payload: e.target.value})
+    setInput(e.target.value);
   };
 
   return(
@@ -26,9 +26,7 @@ const TodoForm = props => {
           value={input}
           onChange={handleChanges}
           />
-          <button onClick={()=>{
-            props.dispatch({type: "ADD", payload: input})
-            setInput('')}}>
+          <button type="submit">
             Add</button>
           <button onClick={()=>props.dispatch({type: "COMPLETED"})}>
             Clear Completed</button>
